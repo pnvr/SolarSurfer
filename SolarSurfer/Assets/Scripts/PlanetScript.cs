@@ -3,33 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlanetScript : MonoBehaviour {
-    float rotateSpeed = 20;
-    float randomScale;
+    float rotateSpeed = 75;
+    float randScale;
+    public float gravity;
     int spinDir;
-
+    Rigidbody rb;
     Rigidbody player;
+    Vector3 eulerAngleVelocity;
 
     private void Start() {
-        randomScale = Random.Range(.75f, 3.5f);
+        rb = GetComponent<Rigidbody>();
+        randScale = Random.Range(.75f, 3.5f);
         spinDir = Random.Range(0, 2) * 2 - 1;
-        transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+        transform.localScale = new Vector3(randScale, randScale, randScale);
+        eulerAngleVelocity = new Vector3(0, 0, rotateSpeed * 1 / randScale * spinDir);
     }
 
-    void Update () {
-        transform.Rotate(0, 0, rotateSpeed * 1/randomScale * spinDir * Time.deltaTime);
-	}
-
-    private void OnCollisionStay(Collision collision) {
-
+    private void FixedUpdate() {
+        Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
+        rb.MoveRotation(rb.rotation * deltaRotation);
     }
 
     private void OnTriggerStay(Collider other) {
-        print("Vetovoiman pitäisi vaikuttaa");
         player = other.gameObject.GetComponent<Rigidbody>();
+
+        if(!player) {
+            return;
+        }
         float dist = Vector3.Distance(transform.position, player.transform.position);
-       // player.AddForce(other.gameObject.transform.up * -dist, ForceMode.Acceleration);
-        player.MovePosition(transform.position + transform.up * -dist * Time.deltaTime);
-  
+        player.AddForce((transform.position - player.position) * dist * gravity, ForceMode.Acceleration);
     }
 
 }
