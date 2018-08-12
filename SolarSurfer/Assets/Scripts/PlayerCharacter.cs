@@ -10,22 +10,21 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void Update () {
 
-        if(transform.parent == null) {
-            Vector3 rotationDirection = transform.position - gm.nearestPlanet.transform.position;
-            Quaternion rotationGoal = Quaternion.LookRotation(Vector3.forward, rotationDirection);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * 1/gm.distToPlanet * Time.deltaTime);
-        }
+     
+        Vector3 rotationDirection = transform.position - gm.nearestPlanet.transform.position;
+        Quaternion rotationGoal = Quaternion.LookRotation(Vector3.forward, rotationDirection);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * 1/gm.distToPlanet * Time.deltaTime);
+      
 
         if(Input.GetKeyDown(KeyCode.Mouse0)) {
-            transform.parent = null;
-            rb.velocity = transform.up * speed;
-            
-            //rb.AddForce(transform.up, ForceMode.Acceleration);
+            //transform.parent = null;
+            //rb.velocity = transform.up * speed;  
+            rb.AddForce(transform.up, ForceMode.Acceleration);
         }
 	}
 
-    private void OnCollisionEnter(Collision collision) {
-        transform.parent = collision.transform;
-        rb.constraints = RigidbodyConstraints.FreezeRotationZ;
-    }
+    //private void OnCollisionEnter(Collision collision) {
+    //    transform.parent = collision.transform;
+    //    rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+    //}
 }

@@ -14,7 +14,7 @@ public class CameraControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(player.transform.parent == null) {
+        if(player.transform.parent == null) { // Korjaa tämä että jos on planeetan collider kiinni pelaajassa
             Vector3 playerPos = new Vector3(player.transform.position.x, 0, camDist);
             transform.position = Vector3.MoveTowards(transform.position, playerPos, Time.deltaTime * camSpeed);
         } else {

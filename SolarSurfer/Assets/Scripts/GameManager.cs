@@ -9,9 +9,17 @@ public class GameManager : MonoBehaviour {
     public float distToPlanet;
     public GameObject[] planets;
     public GameObject player;
-
+    public GameObject planetFolder;
+    public List<GameObject> planetPrefabs;
 
 	void Start () {
+        for (int i = 0; i < 10; i++) {
+            var prefab = planetPrefabs[Random.Range(0, planetPrefabs.Count)];
+            Vector3 newPos = new Vector3(i * 30 + Random.Range(5f, 10f), Random.Range(-25, 25), 0);
+            GameObject planet = Instantiate(prefab);
+            planet.transform.position = newPos;
+            planet.transform.parent = planetFolder.transform;
+        }
         planets = GameObject.FindGameObjectsWithTag("Planet");
 	}
 	
@@ -29,7 +37,6 @@ public class GameManager : MonoBehaviour {
                 distToPlanet = shortestDist;
             }
         }
-
         //nearestPlanet = planets.Min(planet => Vector3.Distance(player.transform.position, planet.transform.position));
         nearestPlanet = planetCandidate;
 	}
