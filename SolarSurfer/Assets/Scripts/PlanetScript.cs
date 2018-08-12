@@ -31,7 +31,7 @@ public class PlanetScript : MonoBehaviour {
             return;
         }
         float dist = Vector3.Distance(transform.position, player.transform.position);
-        player.AddForce((transform.position - player.position) * dist * gravity * randScale, ForceMode.Acceleration);
+        player.AddForce((transform.position - player.position) * (1 / dist) * gravity * (randScale/2), ForceMode.Acceleration);
     }
 
 }

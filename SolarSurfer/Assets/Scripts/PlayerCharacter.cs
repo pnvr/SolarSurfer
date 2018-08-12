@@ -19,7 +19,7 @@ public class PlayerCharacter : MonoBehaviour {
             rb = gameObject.AddComponent<Rigidbody>();
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
-            rb.position += transform.up * .15f;
+            rb.position += transform.up * .2f;
             rb.velocity = transform.up * speed;
         }
     }
@@ -28,7 +28,7 @@ public class PlayerCharacter : MonoBehaviour {
         if(gm.nearestPlanet && rb) { 
             Vector3 rotationDirection = transform.position - gm.nearestPlanet.transform.position;
             Quaternion rotationGoal = Quaternion.LookRotation(Vector3.forward, rotationDirection);
-            rb.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * Time.deltaTime);
+            rb.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * 1/gm.distToPlanet * Time.deltaTime);
         }
     }
 
