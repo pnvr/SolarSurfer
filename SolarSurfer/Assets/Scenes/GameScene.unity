@@ -512,8 +512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 1346619420}
-  playerRotationSpeed: 1000
-  speed: 5
+  playerRotationSpeed: 500
+  speed: 50
 --- !u!136 &905357823
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -540,7 +540,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 8
+  m_Constraints: 72
   m_CollisionDetection: 1
 --- !u!1 &972105729
 GameObject:

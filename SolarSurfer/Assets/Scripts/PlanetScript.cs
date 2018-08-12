@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlanetScript : MonoBehaviour {
-    float rotateSpeed = 75;
+    float rotateSpeed = 100;
     float randScale;
     public float gravity;
     int spinDir;
@@ -31,7 +31,7 @@ public class PlanetScript : MonoBehaviour {
             return;
         }
         float dist = Vector3.Distance(transform.position, player.transform.position);
-        player.AddForce((transform.position - player.position) * dist * gravity, ForceMode.Acceleration);
+        player.AddForce((transform.position - player.position) * dist * gravity * randScale, ForceMode.Acceleration);
     }
 
 }

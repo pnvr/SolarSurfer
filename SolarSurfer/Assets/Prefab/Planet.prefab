@@ -58,7 +58,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &114129917777659868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6511a6f8442744595a312f01e3f294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 0.1
+  gravity: 0.0005
 --- !u!135 &135903932844585958
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -81,7 +81,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136158952356106158
 CapsuleCollider:

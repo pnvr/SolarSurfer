@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
             if(dist < shortestDist) {
                 planetCandidate = planet;
                 shortestDist = dist;
-                distToPlanet = shortestDist;
+                distToPlanet = Mathf.Max(1f,shortestDist);
             }
         }
         nearestPlanet = planetCandidate;

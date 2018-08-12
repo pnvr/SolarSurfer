@@ -17,9 +17,11 @@ public class CameraControl : MonoBehaviour {
         if(player.transform.parent == null) { // Korjaa tämä että jos on planeetan collider kiinni pelaajassa
             Vector3 playerPos = new Vector3(player.transform.position.x, 0, camDist);
             transform.position = Vector3.MoveTowards(transform.position, playerPos, Time.deltaTime * camSpeed);
+
         } else {
             Vector3 planetPos = new Vector3(gm.nearestPlanet.transform.position.x, 0, camDist);
-            transform.position = Vector3.MoveTowards(transform.position, planetPos, Time.deltaTime * gm.distToPlanet * camSpeed/5);
+            transform.position = Vector3.MoveTowards(transform.position, planetPos, Time.deltaTime * gm.distToPlanet * camSpeed);
+           // transform.position = planetPos;
         }
         
 	}
