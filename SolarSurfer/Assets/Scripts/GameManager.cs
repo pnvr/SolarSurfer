@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	void Awake () {
         for(int i = 0; i < 50; i++) {
             var prefab = planetPrefabs[Random.Range(0, planetPrefabs.Count)];
-            Vector3 newPos = new Vector3(i * 75 + Random.Range(10f, 20f), Random.Range(-40, 40), 0);
+            Vector3 newPos = new Vector3(i * 60 + Random.Range(10f, 20f), Random.Range(-40, 40), 0);
             GameObject planet = Instantiate(prefab);
             planet.transform.position = newPos;
             planet.transform.parent = planetFolder.transform;
