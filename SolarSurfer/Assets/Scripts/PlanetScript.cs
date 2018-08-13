@@ -12,6 +12,8 @@ public class PlanetScript : MonoBehaviour {
     Rigidbody rb;
     Rigidbody playerRb;
     Vector3 eulerAngleVelocity;
+    SpriteRenderer sr;
+    public Sprite Murut;
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
@@ -30,6 +32,8 @@ public class PlanetScript : MonoBehaviour {
                 var cc = gameObject.GetComponent<CapsuleCollider>();
                 // Tähän supernova + sound
                 // Tähän myös murut ja colliderien ja rigidbodyn poisto
+                sr = GetComponent<SpriteRenderer >();
+                sr.sprite = Murut;
                 //Destroy(sc);
                 Destroy(cc);
                 //gameObject.SetActive(false); // Tämä pois kun edelliset tehty
