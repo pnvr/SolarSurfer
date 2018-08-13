@@ -50,8 +50,10 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        transform.parent = collision.transform;
-        Destroy(rb);
-        
+
+        if (collision.gameObject.tag == "Planet") {
+            transform.parent = collision.transform;
+            Destroy(rb);
+        }
     }
 }
