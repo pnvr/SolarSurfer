@@ -122,7 +122,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4111580355701006, guid: 6d369321ead087241a5df9ccb41fa5a0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 4111580355701006, guid: 6d369321ead087241a5df9ccb41fa5a0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -457,7 +457,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
       propertyPath: m_LocalPosition.y
@@ -492,6 +492,15 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1346619420}
+    - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114163978198944826, guid: 391c04012526d58439c862682b0a76ad,
+        type: 2}
+      propertyPath: playerRotationSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391c04012526d58439c862682b0a76ad, type: 2}
   m_IsPrefabAsset: 0

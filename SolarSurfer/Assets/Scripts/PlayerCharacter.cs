@@ -17,13 +17,13 @@ public class PlayerCharacter : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 
-    //private void Start() {
-    //    PlayerWithoutAPlanet();
-    //}
+    private void Start() {
+        rb.velocity = transform.up * speed;
+    }
 
     private void Update() {
 
-        if(Input.GetKeyDown(KeyCode.Mouse0)) {
+        if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space) && rb) {
             Fabric.EventManager.Instance.PostEvent(thrustAudio);
 
             var anim = GetComponent<Animator>();
@@ -37,9 +37,10 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (Input.GetKey(KeyCode.Mouse0) && rb) {
+        if (Input.GetKey(KeyCode.Mouse0) && rb || Input.GetKey(KeyCode.Space) && rb) {
             rb.AddForce(transform.up * speed, ForceMode.Acceleration);
-
+            var anim = GetComponent<Animator>();
+            anim.Play("AstronautJetAnimation");
         }
 
         if (gm.nearestPlanet && rb) {
@@ -65,8 +66,17 @@ public class PlayerCharacter : MonoBehaviour {
         if (collision.gameObject.tag == "Planet") {
             transform.parent = collision.transform;
             Destroy(rb);
-            collision.gameObject.GetComponent<PlanetScript>().PlanetDestruction();
+            if(collision.gameObject.name == "PlanetGreen2(Clone)") {
 
+            } else { collision.gameObject.GetComponent<PlanetScript>().PlanetDestruction(); }
+            
+
+            Fabric.EventManager.Instance.PostEvent(landAudio);
+
+        }
+        if(collision.gameObject.tag == "Earth") {
+            transform.parent = collision.transform;
+            Destroy(rb);
             Fabric.EventManager.Instance.PostEvent(landAudio);
 
         }

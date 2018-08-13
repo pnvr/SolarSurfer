@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour {
                 planet.transform.position = newPos;
                 planet.transform.parent = planetFolder.transform;
             } else {
-                GameObject goal = Instantiate(earth);
-                Vector3 newPos = new Vector3(i * 75 + Random.Range(10f, 20f), Random.Range(-40, 40), 0);
-                goal.transform.position = newPos;
+                GameObject planet = Instantiate(earth);
+                Vector3 newPos = new Vector3(i * 77, 0, 0);
+                planet.transform.position = newPos;
             }
 
         }

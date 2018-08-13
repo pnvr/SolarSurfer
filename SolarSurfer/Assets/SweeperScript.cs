@@ -11,7 +11,9 @@ public class SweeperScript : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Planet") {
-            other.gameObject.SetActive(false);
+            if(other.gameObject.name == "PlanetGreen2(Clone)") {
+
+            } else { other.gameObject.SetActive(false); }
         }
 
     }
