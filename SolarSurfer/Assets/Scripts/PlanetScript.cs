@@ -8,7 +8,7 @@ public class PlanetScript : MonoBehaviour {
     public float gravity;
     int spinDir;
     Rigidbody rb;
-    Rigidbody player;
+    Rigidbody playerRb;
     Vector3 eulerAngleVelocity;
 
     private void Start() {
@@ -25,13 +25,15 @@ public class PlanetScript : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        player = other.gameObject.GetComponent<Rigidbody>();
-
-        if(!player) {
-            return;
+        if(other.gameObject.name == "PlayerCharacter") {
+            playerRb = other.gameObject.GetComponent<Rigidbody>();
+            if(!playerRb) {
+                return;
+            }
+            float dist = Vector3.Distance(transform.position, playerRb.transform.position);
+            playerRb.AddForce((transform.position - playerRb.position) * (1 / dist) * gravity * (randScale / 2), ForceMode.Acceleration);
         }
-        float dist = Vector3.Distance(transform.position, player.transform.position);
-        player.AddForce((transform.position - player.position) * (1 / dist) * gravity * (randScale/2), ForceMode.Acceleration);
+
     }
 
 }
