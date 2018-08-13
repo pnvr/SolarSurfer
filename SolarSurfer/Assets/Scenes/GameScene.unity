@@ -162,6 +162,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 905357819}
+    - target: {fileID: 114091346929499514, guid: 6d369321ead087241a5df9ccb41fa5a0,
+        type: 2}
+      propertyPath: camSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d369321ead087241a5df9ccb41fa5a0, type: 2}
   m_IsPrefabAsset: 0
