@@ -311,6 +311,48 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1469625921295798, guid: 4cfee0345ec597b45a5bf4dca3ef52c4,
     type: 2}
   m_PrefabInternal: {fileID: 232746996}
+--- !u!1001 &1214981678
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716137715768822, guid: dde15dd6585409d438136cac2366a390, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dde15dd6585409d438136cac2366a390, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!114 &1346619420 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114976425592533596, guid: dbf198e9694eb9249aae4c43cf5a35d0,

@@ -116,4 +116,4 @@ MonoBehaviour:
   gm: {fileID: 0}
   player: {fileID: 0}
   camDist: -90
-  camSpeed: 0.5
+  camSpeed: 0.25
