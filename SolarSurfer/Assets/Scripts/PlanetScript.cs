@@ -6,6 +6,8 @@ public class PlanetScript : MonoBehaviour {
     float rotateSpeed = 100;
     float randScale;
     public float gravity;
+    bool beginDestruction = false;
+    float destTimer = 10;
     int spinDir;
     Rigidbody rb;
     Rigidbody playerRb;
@@ -17,6 +19,15 @@ public class PlanetScript : MonoBehaviour {
         spinDir = Random.Range(0, 2) * 2 - 1;
         transform.localScale = new Vector3(randScale, randScale, randScale);
         eulerAngleVelocity = new Vector3(0, 0, rotateSpeed * 1 / randScale * spinDir);
+    }
+
+    private void Update() {
+        if(beginDestruction) {
+            destTimer -= Time.deltaTime;
+            if(destTimer < 0) {
+                gameObject.SetActive(false);
+            }
+        }
     }
 
     private void FixedUpdate() {
@@ -34,6 +45,10 @@ public class PlanetScript : MonoBehaviour {
             playerRb.AddForce((transform.position - playerRb.position) * (1 / dist) * gravity * (randScale / 2), ForceMode.Acceleration);
         }
 
+    }
+
+    public void PlanetDestruction() {
+        beginDestruction = true;
     }
 
 }

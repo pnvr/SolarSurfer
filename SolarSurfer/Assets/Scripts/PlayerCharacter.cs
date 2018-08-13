@@ -42,6 +42,7 @@ public class PlayerCharacter : MonoBehaviour {
         if (collision.gameObject.tag == "Planet") {
             transform.parent = collision.transform;
             Destroy(rb);
+            collision.gameObject.GetComponent<PlanetScript>().PlanetDestruction();
         }
     }
 }
