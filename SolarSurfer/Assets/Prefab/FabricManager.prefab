@@ -993,7 +993,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 1
+  _volume: 0.45708817
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   _override2DProperties: 0
   _pan2D: 0
   _pan2DRandomization: 0
-  _override3DProperties: 1
+  _override3DProperties: 0
   _priority: 128
   _panLevel: 0
   _spreadLevel: 0
