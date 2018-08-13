@@ -10,6 +10,7 @@ public class PlayerCharacter : MonoBehaviour {
     public string jumpAudio;
     public string thrustAudio;
     public string thrustEndAudio;
+    public string astronautJetNone;
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -19,6 +20,10 @@ public class PlayerCharacter : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.Mouse0)) {
             Fabric.EventManager.Instance.PostEvent(thrustAudio);
+
+            var anim = GetComponent<Animator>();
+            anim.Play("AstronautJetAnimation");
+
             if (transform.parent != null) {  // if (!(transform.parent == null))
                 transform.parent = null;
                 rb = gameObject.AddComponent<Rigidbody>();
