@@ -26,19 +26,10 @@ public class PlayerCharacter : MonoBehaviour {
             var anim = GetComponent<Animator>();
             anim.Play("AstronautJetAnimation");
 
-            if (transform.parent != null) {  // if (!(transform.parent == null))
-                transform.parent = null;
-                rb = gameObject.AddComponent<Rigidbody>();
-                rb.useGravity = false;
-                rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
-                rb.position += transform.up * .2f;
-                rb.velocity = transform.up * speed;
-                //
-            }  
+            PlayerWithoutAPlanet();
         }
         if (Input.GetKeyUp(KeyCode.Mouse0)) {
             Fabric.EventManager.Instance.PostEvent(thrustEndAudio);
-
         }
     }
 
@@ -52,6 +43,17 @@ public class PlayerCharacter : MonoBehaviour {
             Vector3 rotationDirection = transform.position - gm.nearestPlanet.transform.position;
             Quaternion rotationGoal = Quaternion.LookRotation(Vector3.forward, rotationDirection);
             rb.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * 1 / gm.distToPlanet * Time.deltaTime);
+        }
+    }
+
+    public void PlayerWithoutAPlanet() {
+        if(transform.parent != null) {  // if (!(transform.parent == null))
+            transform.parent = null;
+            rb = gameObject.AddComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
+            rb.position += transform.up * .2f;
+            rb.velocity = transform.up * speed;
         }
     }
 
