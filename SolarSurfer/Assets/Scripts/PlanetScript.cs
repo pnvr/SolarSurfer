@@ -46,7 +46,7 @@ public class PlanetScript : MonoBehaviour {
                     //supernovan animaatio tähän
                     var anim = GetComponent<Animator>();
                     anim.Play("Explosion");
-                    if (player.transform.parent != null) {
+                    if (player.transform.parent == gameObject.transform ) {
                         player.GetComponent<PlayerCharacter>().PlayerWithoutAPlanet();
                     }
                     
