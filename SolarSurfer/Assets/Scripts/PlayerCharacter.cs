@@ -11,6 +11,8 @@ public class PlayerCharacter : MonoBehaviour {
     public string thrustAudio;
     public string thrustEndAudio;
     public string astronautJetNone;
+    public string landAudio;
+
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -50,7 +52,6 @@ public class PlayerCharacter : MonoBehaviour {
             Vector3 rotationDirection = transform.position - gm.nearestPlanet.transform.position;
             Quaternion rotationGoal = Quaternion.LookRotation(Vector3.forward, rotationDirection);
             rb.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * 1 / gm.distToPlanet * Time.deltaTime);
-            
         }
     }
 
@@ -59,6 +60,7 @@ public class PlayerCharacter : MonoBehaviour {
         if (collision.gameObject.tag == "Planet") {
             transform.parent = collision.transform;
             Destroy(rb);
+            Fabric.EventManager.Instance.PostEvent(landAudio);
         }
     }
 }
