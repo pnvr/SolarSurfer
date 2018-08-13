@@ -28,7 +28,7 @@ public class PlanetScript : MonoBehaviour {
             if(destTimer < 0) {
                 var sc = gameObject.GetComponent<SphereCollider>();
                 var cc = gameObject.GetComponent<CapsuleCollider>();
-                // Tähän supernova + sound
+                // Tähän supernova ennen Fabricia
                 // Tähän myös murut ja colliderien ja rigidbodyn poisto
                 //Destroy(sc);
                 Destroy(cc);
