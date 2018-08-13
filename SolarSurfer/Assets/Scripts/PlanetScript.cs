@@ -7,15 +7,18 @@ public class PlanetScript : MonoBehaviour {
     float randScale;
     public float gravity;
     bool beginDestruction = false;
+    bool destroyed = false;
     float destTimer = 10;
     int spinDir;
     Rigidbody rb;
+    GameObject player;
     Rigidbody playerRb;
     Vector3 eulerAngleVelocity;
     SpriteRenderer sr;
     public Sprite Murut;
 
     private void Start() {
+        player = GameObject.Find("PlayerCharacter");
         rb = GetComponent<Rigidbody>();
         randScale = Random.Range(.75f, 3.5f);
         spinDir = Random.Range(0, 2) * 2 - 1;
@@ -30,12 +33,19 @@ public class PlanetScript : MonoBehaviour {
             if(destTimer < 0) {
                 var sc = gameObject.GetComponent<SphereCollider>();
                 var cc = gameObject.GetComponent<CapsuleCollider>();
-                // Tähän supernova + sound
+                // Tähän supernova ennen Fabricia
                 // Tähän myös murut ja colliderien ja rigidbodyn poisto
                 sr = GetComponent<SpriteRenderer >();
                 sr.sprite = Murut;
                 //Destroy(sc);
                 Destroy(cc);
+                if(!destroyed) {
+                    destroyed = true;
+                    if(player.transform.parent != null) {
+                        player.GetComponent<PlayerCharacter>().PlayerWithoutAPlanet();
+                    }
+                    
+                }
                 //gameObject.SetActive(false); // Tämä pois kun edelliset tehty
             }
         }
