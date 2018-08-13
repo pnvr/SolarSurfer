@@ -7,6 +7,12 @@ public class PlayerCharacter : MonoBehaviour {
     Rigidbody rb;
     public float playerRotationSpeed;
     public float speed;
+    public string jumpAudio;
+    public string thrustAudio;
+    public string thrustEndAudio;
+    public string astronautJetNone;
+    public string landAudio;
+
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -15,34 +21,49 @@ public class PlayerCharacter : MonoBehaviour {
     private void Update() {
 
         if(Input.GetKeyDown(KeyCode.Mouse0)) {
-            if(transform.parent != null) {  // if (!(transform.parent == null))
+            Fabric.EventManager.Instance.PostEvent(thrustAudio);
+
+            var anim = GetComponent<Animator>();
+            anim.Play("AstronautJetAnimation");
+
+            if (transform.parent != null) {  // if (!(transform.parent == null))
                 transform.parent = null;
                 rb = gameObject.AddComponent<Rigidbody>();
                 rb.useGravity = false;
                 rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
                 rb.position += transform.up * .2f;
                 rb.velocity = transform.up * speed;
+                //
             }  
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0)) {
+            Fabric.EventManager.Instance.PostEvent(thrustEndAudio);
+
         }
     }
 
     private void FixedUpdate() {
-        if(Input.GetKey(KeyCode.Mouse0) && rb) {
+        if (Input.GetKey(KeyCode.Mouse0) && rb) {
             rb.AddForce(transform.up * speed, ForceMode.Acceleration);
+
         }
 
-        if(gm.nearestPlanet && rb) { 
+        if (gm.nearestPlanet && rb) {
             Vector3 rotationDirection = transform.position - gm.nearestPlanet.transform.position;
             Quaternion rotationGoal = Quaternion.LookRotation(Vector3.forward, rotationDirection);
-            rb.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * 1/gm.distToPlanet * Time.deltaTime);
+            rb.rotation = Quaternion.RotateTowards(transform.rotation, rotationGoal, playerRotationSpeed * 1 / gm.distToPlanet * Time.deltaTime);
         }
     }
 
     private void OnCollisionEnter(Collision collision) {
+
         if (collision.gameObject.tag == "Planet") {
             transform.parent = collision.transform;
             Destroy(rb);
             collision.gameObject.GetComponent<PlanetScript>().PlanetDestruction();
+
+            Fabric.EventManager.Instance.PostEvent(landAudio);
+
         }
     }
 }
