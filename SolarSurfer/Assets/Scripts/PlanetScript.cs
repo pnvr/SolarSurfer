@@ -15,8 +15,8 @@ public class PlanetScript : MonoBehaviour {
     GameObject player;
     Rigidbody playerRb;
     Vector3 eulerAngleVelocity;
-    SpriteRenderer sr;
-    public Sprite Murut;
+    //SpriteRenderer sr;
+    //public Sprite Murut;
 
     private void Start() {
         player = GameObject.Find("PlayerCharacter");
@@ -36,8 +36,8 @@ public class PlanetScript : MonoBehaviour {
                 var cc = gameObject.GetComponent<CapsuleCollider>();
                 // Tähän supernova ennen Fabricia
                 // Tähän myös murut ja colliderien ja rigidbodyn poisto
-                sr = GetComponent<SpriteRenderer >();
-                sr.sprite = Murut;
+                //sr = GetComponent<SpriteRenderer >();
+                //sr.sprite = Murut;
                 //Destroy(sc);
                 Destroy(cc);
                 if(!destroyed) {
@@ -45,7 +45,7 @@ public class PlanetScript : MonoBehaviour {
                     Fabric.EventManager.Instance.PostEvent(supernova);
                     //supernovan animaatio tähän
                     var anim = GetComponent<Animator>();
-                    anim.Play("Supernova9");
+                    anim.Play("Explosion");
                     if (player.transform.parent != null) {
                         player.GetComponent<PlayerCharacter>().PlayerWithoutAPlanet();
                     }
