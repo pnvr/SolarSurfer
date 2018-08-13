@@ -8,7 +8,7 @@ public class PlanetScript : MonoBehaviour {
     public float gravity;
     bool beginDestruction = false;
     bool destroyed = false;
-    float destTimer = 10;
+    float destTimer = 5;
     int spinDir;
     public string supernova;
     Rigidbody rb;
@@ -21,8 +21,9 @@ public class PlanetScript : MonoBehaviour {
     private void Start() {
         player = GameObject.Find("PlayerCharacter");
         rb = GetComponent<Rigidbody>();
-        randScale = Random.Range(.75f, 3.5f);
+        randScale = Random.Range(.5f, 2f);
         spinDir = Random.Range(0, 2) * 2 - 1;
+        destTimer = destTimer * randScale;
         transform.localScale = new Vector3(randScale, randScale, randScale);
         eulerAngleVelocity = new Vector3(0, 0, rotateSpeed * 1 / randScale * spinDir);
     }

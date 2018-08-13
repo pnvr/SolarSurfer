@@ -17,6 +17,10 @@ public class PlayerCharacter : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 
+    //private void Start() {
+    //    PlayerWithoutAPlanet();
+    //}
+
     private void Update() {
 
         if(Input.GetKeyDown(KeyCode.Mouse0)) {

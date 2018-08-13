@@ -11,14 +11,22 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
     public GameObject planetFolder;
     public List<GameObject> planetPrefabs;
+    public GameObject earth;
 
 	void Awake () {
-        for(int i = 0; i < 50; i++) {
-            var prefab = planetPrefabs[Random.Range(0, planetPrefabs.Count)];
-            Vector3 newPos = new Vector3(i * 60 + Random.Range(10f, 20f), Random.Range(-40, 40), 0);
-            GameObject planet = Instantiate(prefab);
-            planet.transform.position = newPos;
-            planet.transform.parent = planetFolder.transform;
+        for(int i = 0; i < 25; i++) {
+            if(i < 24) {
+                var prefab = planetPrefabs[Random.Range(0, planetPrefabs.Count)];
+                Vector3 newPos = new Vector3(i * 75 + Random.Range(10f, 20f), Random.Range(-40, 40), 0);
+                GameObject planet = Instantiate(prefab);
+                planet.transform.position = newPos;
+                planet.transform.parent = planetFolder.transform;
+            } else {
+                GameObject goal = Instantiate(earth);
+                Vector3 newPos = new Vector3(i * 75 + Random.Range(10f, 20f), Random.Range(-40, 40), 0);
+                goal.transform.position = newPos;
+            }
+
         }
         planets = GameObject.FindGameObjectsWithTag("Planet");
 	}

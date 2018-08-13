@@ -57,4 +57,10 @@ MonoBehaviour:
   player: {fileID: 0}
   planetFolder: {fileID: 0}
   planetPrefabs:
-  - {fileID: 1515154296631058, guid: 06e2299797d8f094b872d34612c6390a, type: 2}
+  - {fileID: 1728825472333624, guid: 13a6b7e1f30d9f940b47e7ccf04c574a, type: 2}
+  - {fileID: 1133188550294636, guid: 77b29d1fde54d2c4fa240c64b32ae60f, type: 2}
+  - {fileID: 1812140257072628, guid: e0a9562e8f862b246b8033b31cc6cc1d, type: 2}
+  - {fileID: 1805156840643768, guid: 6fdda1f2afeef69458289d943ebf6988, type: 2}
+  - {fileID: 1671951868367076, guid: 7d541c9fd7e0457469ddbc7f0215efe0, type: 2}
+  - {fileID: 1691954951226184, guid: e3cede91bfe8061458c6a6c811b354e1, type: 2}
+  - {fileID: 1881520939847500, guid: c2944fb30146f1c48add762880f8c287, type: 2}

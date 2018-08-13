@@ -26,7 +26,7 @@ public class CameraControl : MonoBehaviour {
         
 	}
 
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerEnter(Collider other) {
         //print(other);
         if(other.gameObject.tag == "Player") {
             print("GameOver");
