@@ -64,3 +64,4 @@ MonoBehaviour:
   - {fileID: 1671951868367076, guid: 7d541c9fd7e0457469ddbc7f0215efe0, type: 2}
   - {fileID: 1691954951226184, guid: e3cede91bfe8061458c6a6c811b354e1, type: 2}
   - {fileID: 1881520939847500, guid: c2944fb30146f1c48add762880f8c287, type: 2}
+  earth: {fileID: 1008426951979430, guid: cbfc630bc21664c4ba17b93250cb0809, type: 2}

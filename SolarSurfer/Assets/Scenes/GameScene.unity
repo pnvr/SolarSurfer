@@ -162,16 +162,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 905357819}
-    - target: {fileID: 65267702864628738, guid: 6d369321ead087241a5df9ccb41fa5a0,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 65794130546710718, guid: 6d369321ead087241a5df9ccb41fa5a0,
-        type: 2}
-      propertyPath: m_Center.y
-      value: -75
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d369321ead087241a5df9ccb41fa5a0, type: 2}
   m_IsPrefabAsset: 0
@@ -216,6 +206,53 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cfee0345ec597b45a5bf4dca3ef52c4, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &265947234
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411051493330964, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114884026176052042, guid: 6c89b1646efc08940b624c8e45fee99b,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 905357819}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c89b1646efc08940b624c8e45fee99b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &312646349
 Prefab:
@@ -313,12 +350,6 @@ Prefab:
       propertyPath: planetFolder
       value: 
       objectReference: {fileID: 1131449052}
-    - target: {fileID: 114976425592533596, guid: dbf198e9694eb9249aae4c43cf5a35d0,
-        type: 2}
-      propertyPath: earth
-      value: 
-      objectReference: {fileID: 1008426951979430, guid: cbfc630bc21664c4ba17b93250cb0809,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf198e9694eb9249aae4c43cf5a35d0, type: 2}
   m_IsPrefabAsset: 0
@@ -426,7 +457,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -33.3
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
       propertyPath: m_LocalPosition.y
@@ -461,10 +492,6 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1346619420}
-    - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391c04012526d58439c862682b0a76ad, type: 2}
   m_IsPrefabAsset: 0

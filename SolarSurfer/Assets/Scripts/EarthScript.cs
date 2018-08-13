@@ -27,6 +27,10 @@ public class EarthScript : MonoBehaviour {
         transform.localScale = new Vector3(randScale, randScale, randScale);
         eulerAngleVelocity = new Vector3(0, 0, rotateSpeed * 1 / randScale * spinDir);
     }
+    private void FixedUpdate() {
+        Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
+        rb.MoveRotation(rb.rotation * deltaRotation);
+    }
 
     private void OnTriggerStay(Collider other) {
         if(other.gameObject.name == "PlayerCharacter") {
