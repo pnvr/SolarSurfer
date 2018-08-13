@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 135903932844585958}
   - component: {fileID: 136158952356106158}
   - component: {fileID: 54153147629332494}
+  - component: {fileID: 95847739485382998}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -59,6 +60,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!95 &95847739485382998
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515154296631058}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c4e66005ab9b4348978839ba29882b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114129917777659868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 2
+  supernova: supernova
 --- !u!135 &135903932844585958
 SphereCollider:
   m_ObjectHideFlags: 1

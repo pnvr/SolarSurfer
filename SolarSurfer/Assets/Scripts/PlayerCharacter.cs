@@ -10,7 +10,6 @@ public class PlayerCharacter : MonoBehaviour {
     public string jumpAudio;
     public string thrustAudio;
     public string thrustEndAudio;
-    public string astronautJetNone;
     public string landAudio;
 
 

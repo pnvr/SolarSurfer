@@ -10,6 +10,7 @@ public class PlanetScript : MonoBehaviour {
     bool destroyed = false;
     float destTimer = 10;
     int spinDir;
+    public string supernova;
     Rigidbody rb;
     GameObject player;
     Rigidbody playerRb;
@@ -30,14 +31,17 @@ public class PlanetScript : MonoBehaviour {
             // Tähän animaatio presupernova
             if(destTimer < 0) {
                 var sc = gameObject.GetComponent<SphereCollider>();
-                var cc = gameObject.GetComponent<CapsuleCollider>();
-                // Tähän supernova ennen Fabricia
-                // Tähän myös murut ja colliderien ja rigidbodyn poisto
+                var cc = gameObject.GetComponent<CapsuleCollider>();              
+                    // Tähän myös murut ja colliderien ja rigidbodyn poisto
                 //Destroy(sc);
                 Destroy(cc);
                 if(!destroyed) {
                     destroyed = true;
-                    if(player.transform.parent != null) {
+                    Fabric.EventManager.Instance.PostEvent(supernova);
+                    //supernovan animaatio tähän
+                    var anim = GetComponent<Animator>();
+                    anim.Play("Supernova9");
+                    if (player.transform.parent != null) {
                         player.GetComponent<PlayerCharacter>().PlayerWithoutAPlanet();
                     }
                     
