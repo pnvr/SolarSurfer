@@ -24,8 +24,15 @@ public class PlanetScript : MonoBehaviour {
     private void Update() {
         if(beginDestruction) {
             destTimer -= Time.deltaTime;
+            // Tähän animaatio presupernova
             if(destTimer < 0) {
-                gameObject.SetActive(false);
+                var sc = gameObject.GetComponent<SphereCollider>();
+                var cc = gameObject.GetComponent<CapsuleCollider>();
+                // Tähän supernova + sound
+                // Tähän myös murut ja colliderien ja rigidbodyn poisto
+                //Destroy(sc);
+                Destroy(cc);
+                //gameObject.SetActive(false); // Tämä pois kun edelliset tehty
             }
         }
     }

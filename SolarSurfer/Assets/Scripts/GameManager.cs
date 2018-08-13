@@ -27,13 +27,15 @@ public class GameManager : MonoBehaviour {
         float shortestDist = float.MaxValue;
         GameObject planetCandidate = null;
         foreach(GameObject planet in planets) {
-            float radius = planet.GetComponent<SphereCollider>().radius;
-            var dist = Vector3.Distance(player.transform.position, planet.transform.position) - radius;
+            if(planet.GetComponent<SphereCollider>()) {
+                float radius = planet.GetComponent<SphereCollider>().radius;
+                var dist = Vector3.Distance(player.transform.position, planet.transform.position) - radius;
 
-            if(dist < shortestDist) {
-                planetCandidate = planet;
-                shortestDist = dist;
-                distToPlanet = Mathf.Max(1f,shortestDist);
+                if(dist < shortestDist) {
+                    planetCandidate = planet;
+                    shortestDist = dist;
+                    distToPlanet = Mathf.Max(1f, shortestDist);
+                }
             }
         }
         nearestPlanet = planetCandidate;
