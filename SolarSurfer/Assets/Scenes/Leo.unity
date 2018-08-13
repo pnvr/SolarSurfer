@@ -715,6 +715,11 @@ Prefab:
       propertyPath: turnAudio
       value: turn
       objectReference: {fileID: 0}
+    - target: {fileID: 114163978198944826, guid: 391c04012526d58439c862682b0a76ad,
+        type: 2}
+      propertyPath: astronautJetNone
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391c04012526d58439c862682b0a76ad, type: 2}
   m_IsPrefabAsset: 0
