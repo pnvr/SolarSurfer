@@ -204,10 +204,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1469625921295798, guid: 4cfee0345ec597b45a5bf4dca3ef52c4, type: 2}
-      propertyPath: m_Name
-      value: PlanetFolder
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cfee0345ec597b45a5bf4dca3ef52c4, type: 2}
   m_IsPrefabAsset: 0
@@ -372,11 +368,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -28.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4442565225127002, guid: 391c04012526d58439c862682b0a76ad, type: 2}
       propertyPath: m_LocalPosition.z
