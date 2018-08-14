@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 //using System.Linq;
 using UnityEngine;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour {
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour {
     public GameObject planetFolder;
     public List<GameObject> planetPrefabs;
     public GameObject earth;
+    public TextMeshProUGUI statusText;
+    float textTimer = 5;
+    public bool gameOver = false;
 
 	void Awake () {
         for(int i = 0; i < 25; i++) {
@@ -32,6 +36,24 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void Update () {
+        textTimer += Time.deltaTime;
+
+        if(!gameOver) {
+            if(textTimer > 20) {
+                statusText.text = "";
+            } else if(textTimer > 12) {
+                statusText.text = "";
+            } else if(textTimer > 8.8f) {
+                statusText.text = "- A Long Way From Home -";
+            } else if(textTimer > 8) {
+                statusText.text = "";
+            } else if(textTimer > 0) {
+                statusText.text = "Solar Surfer";
+            }
+        }
+
+
+
         float shortestDist = float.MaxValue;
         GameObject planetCandidate = null;
         foreach(GameObject planet in planets) {
@@ -48,4 +70,15 @@ public class GameManager : MonoBehaviour {
         }
         nearestPlanet = planetCandidate;
 	}
+
+    public void GameOver() {
+        Time.timeScale = 0;
+        statusText.text = "Game over\n \n- Tap to retry! -";
+        gameOver = true;
+    }
+
+    public void GameWon() {
+        statusText.text = "This is the last livable planet in the universe, please take good care of it!\n\n - Tap to go at it again! -";
+        gameOver = true;
+    }
 }

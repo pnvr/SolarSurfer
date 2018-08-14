@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 4705129842747360}
   - component: {fileID: 114675206293380090}
   - component: {fileID: 114726351144827160}
+  - component: {fileID: 114146028384160898}
   m_Layer: 0
   m_Name: Jetpack for a Surfboard_1
   m_TagString: Untagged
@@ -605,6 +606,39 @@ MonoBehaviour:
     _transitionToSnapshotData:
       _snapshot: 
       _timeToReach: 0
+--- !u!114 &114146028384160898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928659488424838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1137554331, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventName: stop
+  _eventID: 0
+  _overrideEventTriggerAction: 1
+  _overrideParameters:
+    _overrideIncomingEventAction: 0
+    _incomingEventAction: 0
+    _overrideEventAction: 21
+    _type: 0
+    _floatParameter: 1
+    _stringParameter: 
+    _switchPresetData:
+      _sourcePreset: 
+      _targetPreset: 
+    _dspParameterData:
+      _dspType: 0
+      _parameter: 
+      _value: 0
+      _time: 0
+      _curve: 0.5
+    _transitionToSnapshotData:
+      _snapshot: 
+      _timeToReach: 0
 --- !u!114 &114195945572866570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -631,6 +665,7 @@ MonoBehaviour:
   - jumpAudio
   - land
   - music
+  - stop
   - supernova
   - turn
   _eventEditor:

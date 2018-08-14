@@ -94,7 +94,8 @@ MonoBehaviour:
   jumpAudio: jumpAudio
   thrustAudio: jetpackstart
   thrustEndAudio: jetpackend
-  landAudio: 
+  landAudio: land
+  stopAudio: stop
 --- !u!136 &136754450993399096
 CapsuleCollider:
   m_ObjectHideFlags: 1

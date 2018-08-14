@@ -7,19 +7,19 @@ public class EarthScript : MonoBehaviour {
     float rotateSpeed = 100;
     float randScale;
     public float gravity;
-    bool beginDestruction = false;
-    bool destroyed = false;
+    //bool beginDestruction = false;
+    //bool destroyed = false;
     float destTimer = 5;
     int spinDir;
     Rigidbody rb;
-    GameObject player;
     Rigidbody playerRb;
     Vector3 eulerAngleVelocity;
+    //GameObject player;
     //SpriteRenderer sr;
     //public Sprite Murut;
 
     private void Start() {
-        player = GameObject.Find("PlayerCharacter");
+        //player = GameObject.Find("PlayerCharacter");
         rb = GetComponent<Rigidbody>();
         randScale = 4; //Random.Range(.5f, 2f);
         spinDir = Random.Range(0, 2) * 2 - 1;

@@ -29,7 +29,7 @@ public class CameraControl : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         //print(other);
         if(other.gameObject.tag == "Player") {
-            print("GameOver");
+            gm.GameOver();
         }
     }
 }
