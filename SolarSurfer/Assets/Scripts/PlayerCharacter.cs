@@ -47,8 +47,8 @@ public class PlayerCharacter : MonoBehaviour {
                     SceneManager.LoadScene(0);
                 }
             }
-
         }
+
         if(Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();
         }
@@ -77,7 +77,7 @@ public class PlayerCharacter : MonoBehaviour {
             rb = gameObject.AddComponent<Rigidbody>();
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
-            rb.position += transform.up * .25f;
+            rb.position += transform.up * .75f;
             rb.velocity = transform.up * speed;
         }
     }

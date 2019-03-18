@@ -7,6 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour {
     public GameObject nearestPlanet;
+    public string thrustEndAudio;
     public float distToPlanet;
     public GameObject[] planets;
     public GameObject player;
@@ -52,8 +53,6 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-
-
         float shortestDist = float.MaxValue;
         GameObject planetCandidate = null;
         foreach(GameObject planet in planets) {
@@ -74,6 +73,7 @@ public class GameManager : MonoBehaviour {
     public void GameOver() {
         Time.timeScale = 0;
         statusText.text = "Game over\n \n- Tap to retry! -";
+        Fabric.EventManager.Instance.PostEvent(thrustEndAudio);
         gameOver = true;
     }
 
