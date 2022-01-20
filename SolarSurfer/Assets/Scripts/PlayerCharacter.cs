@@ -28,7 +28,7 @@ public class PlayerCharacter : MonoBehaviour {
 
         if(!gm.gameOver) {
             if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space) && rb) {
-                Fabric.EventManager.Instance.PostEvent(thrustAudio);
+                //Fabric.EventManager.Instance.PostEvent(thrustAudio);
 
                 var anim = GetComponent<Animator>();
                 anim.Play("AstronautJetAnimation");
@@ -36,14 +36,14 @@ public class PlayerCharacter : MonoBehaviour {
                 PlayerWithoutAPlanet();
             }
             if(Input.GetKeyUp(KeyCode.Mouse0)) {
-                Fabric.EventManager.Instance.PostEvent(thrustEndAudio);
+                //Fabric.EventManager.Instance.PostEvent(thrustEndAudio);
             }
         } else {
             waitTimer -= Time.unscaledDeltaTime;
             if(waitTimer < 0) {
                 if(Input.GetKeyDown(KeyCode.Mouse0)){
                     Time.timeScale = 1;
-                    Fabric.EventManager.Instance.PostEvent(stopAudio);
+                    //Fabric.EventManager.Instance.PostEvent(stopAudio);
                     SceneManager.LoadScene(0);
                 }
             }
@@ -92,13 +92,13 @@ public class PlayerCharacter : MonoBehaviour {
                 collision.gameObject.GetComponent<PlanetScript>().PlanetDestruction();
             } 
             
-            Fabric.EventManager.Instance.PostEvent(landAudio);
+            //Fabric.EventManager.Instance.PostEvent(landAudio);
         }
 
         if(collision.gameObject.name == "PlanetGreen2(Clone)") {
             transform.parent = collision.transform;
             Destroy(rb);
-            Fabric.EventManager.Instance.PostEvent(landAudio);
+            //Fabric.EventManager.Instance.PostEvent(landAudio);
             gm.GameWon();
 
         }

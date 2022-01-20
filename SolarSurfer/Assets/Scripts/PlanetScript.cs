@@ -43,7 +43,7 @@ public class PlanetScript : MonoBehaviour {
                 Destroy(cc);
                 if(!destroyed) {
                     destroyed = true;
-                    Fabric.EventManager.Instance.PostEvent(supernova);
+                    //Fabric.EventManager.Instance.PostEvent(supernova);
                     //supernovan animaatio tähän
                     var anim = GetComponent<Animator>();
                     anim.Play("Explosion");

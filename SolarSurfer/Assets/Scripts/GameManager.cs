@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour {
     public void GameOver() {
         Time.timeScale = 0;
         statusText.text = "Game over\n \n- Tap to retry! -";
-        Fabric.EventManager.Instance.PostEvent(thrustEndAudio);
+        //Fabric.EventManager.Instance.PostEvent(thrustEndAudio);
         gameOver = true;
     }
 
